@@ -9,14 +9,17 @@ import (
 	"github.com/gorilla/mux"
 )
 
+// GET /hello
 func HelloHandler(w http.ResponseWriter, req *http.Request) {
 	io.WriteString(w, "Hello, world\n")
 }
 
+// POST /article
 func PostArticleHandler(w http.ResponseWriter, req *http.Request) {
-	io.WriteString(w, "Posting Article...\n")
+
 }
 
+// GET /article/list
 func ArticleListHandler(w http.ResponseWriter, req *http.Request) {
 	queryMap := req.URL.Query()
 
@@ -36,6 +39,7 @@ func ArticleListHandler(w http.ResponseWriter, req *http.Request) {
 	io.WriteString(w, resString)
 }
 
+// GET /article/{id}
 func ArticleDetailHandler(w http.ResponseWriter, req *http.Request) {
 	articleId, err := strconv.Atoi(mux.Vars(req)["id"])
 	if err != nil {
@@ -46,9 +50,12 @@ func ArticleDetailHandler(w http.ResponseWriter, req *http.Request) {
 	io.WriteString(w, resString)
 }
 
+// POST /article/nice
 func PostNiceHandler(w http.ResponseWriter, req *http.Request) {
 	io.WriteString(w, "Posting Nice...\n")
 }
+
+// POST /comment
 func PostCommentHandler(w http.ResponseWriter, req *http.Request) {
 	io.WriteString(w, "Posting Comment...\n")
 }
