@@ -19,22 +19,22 @@ var (
 )
 
 var (
-	Article1 = Article(
-		ID: 1,
-		Title: "first article",
-		Contents: "This is the test article",
-		UserName: "takayuki",
-		NiceNum: 1,
+	Article1 = Article{
+		ID:          1,
+		Title:       "first article",
+		Contents:    "This is the test article",
+		UserName:    "takayuki",
+		NiceNum:     1,
 		CommentList: []Comment{Comment1, Comment2},
-		CreatedAt: time.Now(),
-	)
+		CreatedAt:   time.Now(),
+	}
 
-	Article2 = Article(
-		ID: 2,
-		Title: "second article",
-		Contents: "This is the test second article",
-		UserName: "takayuki",
-		NiceNum: 2,
+	Article2 = Article{
+		ID:        2,
+		Title:     "second article",
+		Contents:  "This is the test second article",
+		UserName:  "takayuki",
+		NiceNum:   2,
 		CreatedAt: time.Now(),
-	)
+	}
 )
