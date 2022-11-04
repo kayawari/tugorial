@@ -42,6 +42,8 @@ func ArticleListHandler(w http.ResponseWriter, req *http.Request) {
 		page = 1
 	}
 
+	log.Println(page)
+
 	resString := fmt.Sprintf("Article List (page %d)\n", page)
 	io.WriteString(w, resString)
 }
